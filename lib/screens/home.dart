@@ -53,7 +53,8 @@ class _HomeState extends State<Home> {
             BlocBuilder<ListCubit, ListState>(
               builder: (context, state) {
                 return Expanded(
-                  child: ListView.builder(
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => Divider(),
                     itemCount: state.products.length,
                     itemBuilder: (BuildContext context, int index) {
                       Product product = state.products[index];
@@ -62,6 +63,13 @@ class _HomeState extends State<Home> {
                         onDelete: () {
                           context.read<ListCubit>().removeProduct(product.id);
                         },
+                        onEdit: (newName) {
+                          context.read<ListCubit>().editProduct(
+                            product.id,
+                            newName,
+                          );
+                        },
+                        isPressed: product.id == state.isEditingId, 
                       );
                     },
                   ),
