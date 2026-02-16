@@ -5,8 +5,8 @@ class ProductView extends StatefulWidget {
   final Product product;
   final Function() onDelete;
   final Function(String) onEdit;
-  bool isPressed;
-  ProductView({
+  final bool isPressed;
+  const ProductView({
     super.key,
     required this.product,
     required this.onEdit,

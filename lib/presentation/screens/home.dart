@@ -1,8 +1,8 @@
 import 'package:bloc_tester/cubit/list_cubit.dart';
 import 'package:bloc_tester/models/product_model.dart';
-import 'package:bloc_tester/widgets/Button.dart';
-import 'package:bloc_tester/widgets/product.dart';
-import 'package:bloc_tester/widgets/search.dart';
+import 'package:bloc_tester/presentation/widgets/Button.dart';
+import 'package:bloc_tester/presentation/widgets/product.dart';
+import 'package:bloc_tester/presentation/widgets/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
