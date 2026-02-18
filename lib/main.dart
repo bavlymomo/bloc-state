@@ -1,4 +1,5 @@
 import 'package:bloc_tester/cubit/list_cubit.dart';
+import 'package:bloc_tester/presentation/screens/about.dart';
 import 'package:bloc_tester/presentation/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +13,11 @@ class Calc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Home());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Home(),
+      initialRoute: '/',
+      routes: {'/home': (context) => Home(), '/about': (context) => About()},
+    );
   }
 }

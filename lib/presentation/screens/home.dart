@@ -1,6 +1,6 @@
 import 'package:bloc_tester/cubit/list_cubit.dart';
 import 'package:bloc_tester/models/product_model.dart';
-import 'package:bloc_tester/presentation/widgets/Button.dart';
+import 'package:bloc_tester/presentation/widgets/button.dart';
 import 'package:bloc_tester/presentation/widgets/product.dart';
 import 'package:bloc_tester/presentation/widgets/search.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +29,12 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed('/about');
+        },
+        child: Text("About"),
+      ),
       backgroundColor: Colors.tealAccent,
       body: Padding(
         padding: EdgeInsets.all(16),
@@ -69,7 +75,7 @@ class _HomeState extends State<Home> {
                             newName,
                           );
                         },
-                        isPressed: product.id == state.isEditingId, 
+                        isPressed: product.id == state.isEditingId,
                       );
                     },
                   ),
